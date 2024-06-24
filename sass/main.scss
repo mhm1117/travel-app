@@ -1,0 +1,14 @@
+// custom variables
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+
+$custom-theme-colors: (
+    "maincolor": $purple-400,
+    "mainmid": $purple-600,
+    "maindark": $purple-800
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+// import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';
