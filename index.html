@@ -15,7 +15,10 @@
     <title>PNW Train Trip</title>
   </head>
   <body>
-    <main class="container-fluid">
+    <div class="z-n1">
+      <img class="z-n1 position-absolute top-50 start-50 translate-middle opacity-75" style="max-width: 100%;" src="assets/pnw-trip-crop.jpg">
+    </div>
+    <main class="d-flex flex-column container-fluid" style="height: 100vh;">
       <nav class="navbar navbar-extend mt-3 mx-3">
         <div class="">
           <button class="btn btn-maincolor text-light" type="button" id="mainDropBtn" data-bs-toggle="dropdown">
@@ -32,41 +35,43 @@
             <li><a class="dropdown-item text-center" id="changeTrip" href="#">Change Trip</a></li>
           </ul>
         </div>
-        <div class="d-inline-flex column-gap-2">
-          <div class="collapse collapse-horizontal" id="collapseSearch">
-            <button class="btn btn-maincolor">
-              <form><input type="search" class="form-control form-control-sm" placeholder="Search..."></form>
-            </button>
-          </div>
-          <button class="btn btn-maincolor text-light" data-bs-toggle="collapse" data-bs-target="#collapseSearch" id="searchBtn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <div class="">
+          <button class="btn btn-maincolor text-light d-inline-flex column-gap-2" id="searchBtn">
+            <a class="link-light" data-bs-toggle="collapse" href="#collapseSearch">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-            </svg>
+              </svg>
+            </a>
+            <div class="collapse collapse-horizontal" id="collapseSearch">
+              <form><input type="search" class="form-control form-control-sm" placeholder="Search..."></form>
+            </div>
           </button>
         </div>
       </nav>
-      <div id="content" class="d-flex flex-column container text-center gap-4">
-        <h1 class="text-mainmid fw-bolder">PNW Train Journey</h1>
-        <img style="max-width: 80%;" src="assets/pnw-trip-crop.jpg">
-        <div style="max-width: 90%;" id="tripSummary">
-          <h4>We go on Amtrak train rides from the Bay Area
+      <div id="content" class="d-flex flex-column container text-center gap-4" style="margin-top: 15vh;">
+        <h1 class="text-light" style="font-family: 'Northwest';-webkit-text-stroke: 2px;-webkit-text-stroke-color: var(--bs-dark);">PNW TRAIN JOURNEY</h1>
+        <div class="fw-bolder fs-3 text-light" style="max-width: 90%;-webkit-text-stroke: 2px;-webkit-text-stroke-color: var(--bs-dark);" id="tripSummary">
+          <p>We go on Amtrak train rides from the Bay Area
           through Oregon and Washington, all the way to Seattle.
           Then we either fly or take a train to Vancouver! 
           Then we fly home from there!
-          </h4>
+          </p>
         </div>
-        <div class="fs-5" style="max-width: 90%;" id="tripDetails">
+        <div class="fs-4 text-dark" style="max-width: 90%;-webkit-text-stroke: 1px;-webkit-text-stroke-color: var(--bs-dark);" id="tripDetails">
           <div class="row py-2">
-            <div class="col px-4"><span class="fw-bold">Timeline: </span>
+            <div class="col px-5"><span class="fw-bold">Timeline: </span>
               <span>Spring 2025</span>
             </div>
-            <div class="col px-4"><span class="fw-bold">Locations: </span>
+            <div class="col px-5"><span class="fw-bold">Locations: </span>
               <span>Oregon, Seattle, Vancouver</span>
             </div>
           </div>
-          <div class="row px-4">
-            <div class="col"><span class="fw-bold">Est. Budget: </span>
+          <div class="row py-2">
+            <div class="col px-5"><span class="fw-bold">Est. Budget: </span>
               <span>Unknown</span>
+            </div>
+            <div class="col px-5"><span class="fw-bold">Who's Going: </span>
+              <span>Mattie and Angie</span>
             </div>
           </div>
         </div>
