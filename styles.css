@@ -1,9 +1,0 @@
-@font-face { font-family: Northwest; src: url('assets/NorthwestBold-M8xx.otf'); }
-
-#content {
-    * {
-        margin: auto;
-        /* max-width: 80%; */
-        /* margin-bottom: 1rem; */
-    }
-}

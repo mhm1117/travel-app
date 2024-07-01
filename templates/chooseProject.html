@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/main.min.css">
+    <link rel="stylesheet" href="../css/styles.css"/>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/x-icon" href="assets/travel-icon.svg">
+    <title>Travel App Page</title>
+</head>
+<body>
+    <main class="d-flex flex-column container-fluid" style="height: 100vh;">
+        <nav class="navbar navbar-extend mt-3 mx-3">
+          <div class="">
+            <button class="btn btn-maincolor text-light" type="button" id="mainDropBtn" data-bs-toggle="dropdown">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Calendar</a></li>
+              <li><a class="dropdown-item" href="#">Event List</a></li>
+              <li><a class="dropdown-item" href="#">Budget Tracker</a></li>
+              <li><a class="dropdown-item" href="#">Notes</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-center" id="changeTrip" href="chooseProject.html">Add/Switch Trip</a></li>
+            </ul> 
+          </div>
+          <div class="">
+            <button class="btn btn-maincolor text-light d-inline-flex column-gap-2" id="searchBtn">
+              <a class="link-light" data-bs-toggle="collapse" href="#collapseSearch">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+              </a>
+              <div class="collapse collapse-horizontal" id="collapseSearch">
+                <form><input type="search" class="form-control form-control-sm" placeholder="Search..."></form>
+              </div>
+            </button>
+          </div>
+        </nav>
+
+        <div id="content" class="bg-secondary-subtle rounded 
+                                 position-absolute w-75 start-50 translate-middle-x 
+                                 ps-4 d-flex flex-column gap-4 justify-content-start
+                                 gap-sm-6 pb-sm-6" style="top: 20%;">
+            <h1 class="text-maincolor fw-bolder mt-3">
+                <span class="me-1">SWITCH TRIP</span>
+                <div class="btn-group" role="group">
+                    <a type="button" class="button btn-maincolor text-maincolor" data-bs-toggle="modal" data-bs-target="#addTripModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 18 22">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                          </svg>
+                    </a>
+                    <a type="button" class="button btn-maincolor text-maincolor" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" fill="currentColor" class="bi bi-gear" viewBox="0 0 18 22">
+                            <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+                            <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+                          </svg>
+                    </a>
+                </div>
+            </h1>
+            <div id="trips" class="d-flex flex-wrap column-gap-4 justify-content-start">
+                <div class="card mb-4" style="width: 250px;">
+                    <img src="../assets/pnw-trip-crop.jpg" class="d-none d-sm-block card-img-top" alt="trip-image">
+                    <div class="card-body">
+                      <h5 class="card-title">PNW Train Trip</h5>
+                      <p class="card-text">This is my test trip card for the trip choosing page.</p>
+                      <a href="#" class="btn btn-maincolor">Trip Home Page</a>
+                    </div>
+                  </div>
+                  <div class="card mb-4" style="width: 250px;">
+                    <img src="../assets/mexico-sunset.jpg" class="d-none d-sm-block card-img-top" alt="trip-image">
+                    <div class="card-body">
+                      <h5 class="card-title">Mexico Beach</h5>
+                      <p class="card-text">This is my test trip card for the trip choosing page.</p>
+                      <a href="#" class="btn btn-maincolor">Trip Home Page</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="addTripModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Trip</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+        </div>
+    </div>
+</body>
+</html>
