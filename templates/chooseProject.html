@@ -47,10 +47,10 @@
 
         <div id="content" class="bg-secondary-subtle rounded 
                                  position-absolute w-75 start-50 translate-middle-x 
-                                 ps-4 d-flex flex-column gap-4 justify-content-start
+                                 d-flex flex-column gap-4 justify-content-start
                                  gap-sm-6 pb-sm-6" style="top: 20%;">
             <h1 class="text-maincolor fw-bolder mt-3">
-                <span class="me-1">SWITCH TRIP</span>
+                <span class="ms-4 me-1">SWITCH TRIP</span>
                 <div class="btn-group" role="group">
                     <a type="button" class="button btn-maincolor text-maincolor" data-bs-toggle="modal" data-bs-target="#addTripModal">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 18 22">
@@ -58,21 +58,36 @@
                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
                           </svg>
                     </a>
-                    <a type="button" class="button btn-maincolor text-maincolor" href="#">
+                    <!-- <a type="button" class="button btn-maincolor text-maincolor" href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" fill="currentColor" class="bi bi-gear" viewBox="0 0 18 22">
                             <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
                             <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
                           </svg>
-                    </a>
+                    </a> -->
                 </div>
             </h1>
-            <div id="trips" class="d-flex flex-wrap column-gap-4 justify-content-start">
+            <div id="trips" class="d-flex flex-wrap column-gap-4 justify-content-center justify-content-md-start ms-md-4">
                 <div class="card mb-4" style="width: 250px;">
                     <img src="../assets/pnw-trip-crop.jpg" class="d-none d-sm-block card-img-top" alt="trip-image">
                     <div class="card-body">
                       <h5 class="card-title">PNW Train Trip</h5>
                       <p class="card-text">This is my test trip card for the trip choosing page.</p>
-                      <a href="#" class="btn btn-maincolor">Trip Home Page</a>
+                      <div class="d-flex flex-nowrap align-items-center justify-content-between">
+                        <a href="#" class="btn btn-maincolor">Trip Home Page</a>
+                        <span>
+                          <a type="button" class="text-maincolor">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentcolor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                            </svg>
+                          </a>
+                          <a type="button" class="text-maincolor">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                              <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+                            </svg>
+                          </a>
+                        </span>
+                      </div>
                     </div>
                   </div>
                   <div class="card mb-4" style="width: 250px;">
@@ -80,14 +95,29 @@
                     <div class="card-body">
                       <h5 class="card-title">Mexico Beach</h5>
                       <p class="card-text">This is my test trip card for the trip choosing page.</p>
-                      <a href="#" class="btn btn-maincolor">Trip Home Page</a>
+                      <div class="d-flex flex-nowrap align-items-center justify-content-between">
+                        <a href="#" class="btn btn-maincolor">Trip Home Page</a>
+                        <span>
+                          <a type="button" class="text-maincolor">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentcolor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                            </svg>
+                          </a>
+                          <a type="button" class="text-maincolor">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                              <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+                            </svg>
+                          </a>
+                        </span>
+                      </div>
                     </div>
                   </div>
             </div>
         </div>
     </main>
 
-    <div class="modal fade" id="addTripModal" tabindex="-1">
+    <div class="modal fade" id="addTripModal" tabindex="-1" data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -95,11 +125,26 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  ...
+                  <div class="input-group mb-2">
+                    <span class="input-group-text">Name:</span>
+                    <input type="text" id="nameInput" class="form-control" placeholder="Trip Name"> 
+                  </div>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text">Trip Dates:</span>
+                    <input class="form-control" type="date" id="startInput" value="2024-07-01" min="2024-07-01" max="2030-12-31" />
+                    <span class="input-group-text">to</span>
+                    <input class="form-control" type="date" id="endInput" value="2024-07-01" min="2024-07-01" max="2030-12-31" />
+                  </div>
+                  <div class="input-group mb-2">
+                    <span class="input-group-text">Who's Going:</span>
+                    <input type="text" id="people" class="form-control" placeholder="Mattie, Angie, etc."> 
+                  </div>
+                    <label for="peopleInput" class="input-group-text">Description:</label>
+                    <textarea type="text" id="peopleInput" class="form-control" placeholder="Brief description of your trip..."></textarea>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-maincolor">Save changes</button>
                 </div>
               </div>
         </div>
