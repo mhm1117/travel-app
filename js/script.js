@@ -10,9 +10,11 @@ function init() {
 
 async function getLogins() {
 
-    const furl = "https://github.com/mhm1117/travel-app/blob/main/data/logins.txt";
+    const furl = "../data/logins.txt";
 
     const response = await fetch(furl);
 
-    console.log(response);
+    const text = await response.text()
+
+    console.log(text);
 }
