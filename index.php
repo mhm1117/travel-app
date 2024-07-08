@@ -15,39 +15,12 @@
     <title>PNW Train Trip</title>
   </head>
   <body>
-    <div class="z-n1">
-      <img class="z-n1 position-absolute top-50 start-50 translate-middle opacity-75" style="max-width: 100%;" src="assets/pnw-trip-crop.jpg">
-    </div>
+    
+    <?php include "includes/tripImg.php" ?>
+
+    <?php include "includes/nav.php" ?>
+
     <main class="d-flex flex-column container-fluid" style="height: 100vh;">
-      <nav class="navbar navbar-extend mt-3 mx-3">
-        <div class="">
-          <button class="btn btn-maincolor text-light" type="button" id="mainDropBtn" data-bs-toggle="dropdown">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-            </svg>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Calendar</a></li>
-            <li><a class="dropdown-item" href="#">Event List</a></li>
-            <li><a class="dropdown-item" href="#">Budget Tracker</a></li>
-            <li><a class="dropdown-item" href="#">Notes</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item text-center" id="changeTrip" href="templates/chooseProject.html">Add/Switch Trip</a></li>
-          </ul> 
-        </div>
-        <div class="">
-          <button class="btn btn-maincolor text-light d-inline-flex column-gap-2" id="searchBtn">
-            <a class="link-light" data-bs-toggle="collapse" href="#collapseSearch">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-              </svg>
-            </a>
-            <div class="collapse collapse-horizontal" id="collapseSearch">
-              <form><input type="search" class="form-control form-control-sm" placeholder="Search..."></form>
-            </div>
-          </button>
-        </div>
-      </nav>
       
       <div id="content" class="d-flex flex-column container text-center gap-4" style="margin-top: 15vh;">
         <h1 class="text-light" style="font-family: 'Northwest';-webkit-text-stroke: 2px;-webkit-text-stroke-color: var(--bs-dark);">PNW TRAIN JOURNEY</h1>
@@ -78,5 +51,8 @@
         </div>
       </div>
     </main>
+
+    <?php include "includes/account/login.php"?>
+
   </body>
 </html>
