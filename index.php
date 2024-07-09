@@ -52,7 +52,7 @@
       </div>
     </main>
 
-    <?php include "includes/account/login.php"?>
+    <?php include "includes/account/loginModal.php"?>
 
   </body>
 </html>

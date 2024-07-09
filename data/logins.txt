@@ -1,4 +1,0 @@
-[
-    {"name": "Mattie", "pin": 1285},
-    {"name": "Angie", "pin": 3263}
-]
