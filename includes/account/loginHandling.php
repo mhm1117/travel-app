@@ -14,8 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     while (($data = fgetcsv($open, 1000)) !== FALSE) {
 
         if ($data[0] == $username and $data[1] == $pin) {
-            echo "Successful Login! Welcome " . $username . "!";
             $canLogin = true;
+            session_start();
+            $_SESSION["username"] = $data[0];
         }
     }
 
@@ -24,9 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     
     fclose($open);
-} else {
-    header('Location: ../../' . $_GET['returnURL']);
 }
+
+header('Location: ../../' . $_GET['returnURL']);
 
 
 
