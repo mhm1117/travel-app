@@ -7,7 +7,7 @@
             </div>
             <form>
                 <div class="modal-body">
-                    <p class="form-label fw-bold">Enter Details:</p>
+                    <p class="form-label fw-bold">Details:</p>
                     <div class="input-group mb-2">
                     <span class="input-group-text">Name:</span>
                     <input type="text" id="nameInput" class="form-control" placeholder="Trip Name"> 
@@ -41,7 +41,7 @@
                     <textarea type="text" id="descInput" class="form-control" placeholder="Brief description of your trip..."></textarea>
                     </div>
                     <div class="mb-2">
-                    <span class="form-label fw-bold">Add an image!</span>
+                    <span class="form-label fw-bold">Image</span>
                     <input class="form-control" type="file" id="imgInput">
                     </div>
                 </div>
