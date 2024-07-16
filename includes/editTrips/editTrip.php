@@ -42,7 +42,7 @@
                     </div>
                     <div class="mb-2">
                     <span class="form-label fw-bold">Image</span>
-                    <input class="form-control" type="file" id="imgInput">
+                    <input class="form-control" type="tet" id="imgInput" placeholder="Paste image link here.">
                     </div>
                 </div>
                 <div class="modal-footer">
