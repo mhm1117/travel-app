@@ -17,19 +17,19 @@
                     <input type="text" id="peopleInput" class="form-control" placeholder="Mattie, Angie, etc."> 
                     </div>
                     
-                    <div class="" id="accordion">
+                    <div class="" id="accordion2">
                     <div class="input-group mb-2">
                         <span class="input-group-text">Timeline:</span>
-                        <button type="button" class="form-control" data-bs-toggle="collapse" data-bs-target="#yearColl">Month/Year</button>
-                        <button type="button" class="form-control collapsed" data-bs-toggle="collapse" data-bs-target="#datesColl">Dates</button>
+                        <button type="button" class="form-control collapsed yearBtn" data-bs-toggle="collapse" data-bs-target="#yearColl">Month/Year</button>
+                        <button type="button" class="form-control collapsed dateBtn" data-bs-toggle="collapse" data-bs-target="#datesColl">Dates</button>
                     </div>
-                    <div class="accordion-collapse show" id="yearColl" data-bs-parent="#accordion">
+                    <div class="accordion-collapse collapse" id="yearColl" data-bs-parent="#accordion2">
                         <div class="input-group mb-2">
                         <span class="input-group-text">Month/Year:</span>
                         <input type="text" id="yearInput" class="form-control" placeholder="Month YYYY">
                         </div>
                     </div>
-                    <div class="accordion-collapse collapse" id="datesColl" data-bs-parent="#accordion">
+                    <div class="accordion-collapse collapse show" id="datesColl" data-bs-parent="#accordion2">
                         <input class="form-control" type="date" id="startInput" value="2024-07-01" min="2024-07-01" max="2030-12-31" />
                         <span class="input-group-text">to</span>
                         <input class="form-control" type="date" id="endInput" value="2024-07-01" min="2024-07-01" max="2030-12-31" />

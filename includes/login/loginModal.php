@@ -5,7 +5,7 @@
             <h1 class="modal-title fs-3" id="signInLabel">Sign In</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="includes/account/loginHandling.php" method="POST">
+        <form action="includes/login/loginHandling.php" method="POST">
             <div class="modal-body">
                 <label for="username" class="form-label fw-bold fs-5">Name:</label>
                 <input type="text" id="username" name="username" class="form-control mb-3" placeholder="Your first name.">

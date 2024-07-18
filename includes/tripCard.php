@@ -1,4 +1,4 @@
-<div class="card mb-4" style="width: 250px;">
+<div class="card mb-4" style="width: 250px;" id="tripCard">
     <img src="../assets/mexico-sunset.jpg" class="d-none d-sm-block card-img-top" alt="trip-image">
     <div class="card-body">
     <h5 class="card-title">Mexico Beach</h5>
