@@ -9,40 +9,49 @@
                 <div class="modal-body">
                     <p class="form-label fw-bold">Enter Details:</p>
                     <div class="input-group mb-2">
-                    <span class="input-group-text">Name:</span>
-                    <input type="text" id="tripName" name="tripName" class="form-control" placeholder="Trip Name"> 
+                        <span class="input-group-text">Name:</span>
+                        <input type="text" id="tripName" name="tripName" class="form-control" placeholder="Trip Name"> 
                     </div>
                     <div class="input-group mb-2">
-                    <span class="input-group-text">Who's Going:</span>
-                    <input type="text" id="tripPpl" name="tripPpl" class="form-control" placeholder="Mattie, Angie, etc."> 
+                        <span class="input-group-text">Who's Going:</span>
+                        <input type="text" id="tripPpl" name="tripPpl" class="form-control" placeholder="Mattie, Angie, etc."> 
+                    </div>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text">Where are you going:</span>
+                        <input type="text" id="tripLocales" name="tripLocales" class="form-control" placeholder="Seattle, Yellowstone, etc.">
                     </div>
                     
                     <div class="" id="accordion1">
-                    <div class="input-group mb-2">
-                        <span class="input-group-text">Timeline:</span>
-                        <button type="button" class="form-control collapsed yearBtn" data-bs-toggle="collapse" data-bs-target="#yearColl">Month/Year</button>
-                        <button type="button" class="form-control collapsed dateBtn" data-bs-toggle="collapse" data-bs-target="#datesColl">Dates</button>
-                    </div>
-                    <div class="accordion-collapse collapse show" id="yearColl" data-bs-parent="#accordion1">
                         <div class="input-group mb-2">
-                        <span class="input-group-text">Month/Year:</span>
-                        <input type="text" id="monthYear" name="monthYear" class="form-control" placeholder="Month YYYY">
+                            <span class="input-group-text">Timeline:</span>
+                            <button type="button" class="form-control collapsed yearBtn" data-bs-toggle="collapse" data-bs-target="#yearColl">Month/Year</button>
+                            <button type="button" class="form-control collapsed dateBtn" data-bs-toggle="collapse" data-bs-target="#datesColl">Dates</button>
                         </div>
-                    </div>
-                    <div class="accordion-collapse collapse" id="datesColl" data-bs-parent="#accordion1">
-                        <input class="form-control" type="date" id="startInput" name="startInput" value="" min="2024-07-01" max="2030-12-31" />
-                        <span class="input-group-text">to</span>
-                        <input class="form-control" type="date" id="endInput" name="endInput" value="" min="2024-07-01" max="2030-12-31" />
-                    </div>
+                        <div class="accordion-collapse collapse show" id="yearColl" data-bs-parent="#accordion1">
+                            <div class="input-group mb-2">
+                            <span class="input-group-text">Month/Year:</span>
+                            <input type="text" id="monthYear" name="monthYear" class="form-control" placeholder="Month YYYY">
+                            </div>
+                        </div>
+                        <div class="accordion-collapse collapse" id="datesColl" data-bs-parent="#accordion1">
+                            <input class="form-control" type="date" id="startInput" name="startInput" value="" min="2024-07-01" max="2030-12-31" />
+                            <span class="input-group-text">to</span>
+                            <input class="form-control" type="date" id="endInput" name="endInput" value="" min="2024-07-01" max="2030-12-31" />
+                        </div>
                     </div> 
+
+                    <div class="input-group mb-2">
+                        <span class="input-group-text" style="padding-right:5px;">Estimated Budget:&nbsp;&nbsp;&nbsp;$</span>
+                        <input type="text" id="tripBudget" name="tripBudget" class="form-control" placeholder="">
+                    </div>
                 
                     <div class="mb-2">
-                    <span class="form-label fw-bold">Description:</span>
-                    <textarea type="text" id="description" name="description" class="form-control" placeholder="Brief description of your trip..."></textarea>
+                        <span class="form-label fw-bold">Description:</span>
+                        <textarea type="text" id="description" name="description" class="form-control" placeholder="Brief description of your trip..."></textarea>
                     </div>
                     <div class="mb-2">
-                    <span class="form-label fw-bold">Add an image!</span>
-                    <input class="form-control" type="tet" id="tripImg" name="tripImg" placeholder="Image URL">
+                        <span class="form-label fw-bold">Add an image!</span>
+                        <input class="form-control" type="tet" id="tripImg" name="tripImg" placeholder="Image URL">
                     </div>
                 </div>
                 <div class="modal-footer">
