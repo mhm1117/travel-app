@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
 
     setAddTripTimelineBtns();
+    setDeleteButtons();
 }
 
 function setAddTripTimelineBtns() {
@@ -28,4 +29,18 @@ function setAddTripTimelineBtns() {
         dateBtn.style.border = "1px var(--bs-maincolor) solid"
         yearBtn.style.border = defaultStyle;
     });
+}
+
+function setDeleteButtons() {
+
+    let tripCards = document.querySelectorAll(".tripCard");
+    let toDelInput = document.getElementById("tripIdDel");
+
+    for (let card of tripCards) {
+        let tripId = card.id.split("-")[1];
+        console.log(tripId + "\n");
+        card.querySelector(".delTripBtn").addEventListener("click", (event) => {
+            toDelInput.value = parseInt(tripId);
+        });
+    }
 }
