@@ -18,7 +18,10 @@ try {
                 <h5 class="card-title">' . htmlspecialchars($trip["name"]) . '</h5>
                 <p class="card-text">' . htmlspecialchars($trip["description"]) . '</p>
                 <div class="d-flex flex-nowrap align-items-center justify-content-between">
-                    <a href="../index.php" class="btn btn-maincolor">Select Trip</a>
+                    <form action="index.php" method="post">  
+                        <input type="hidden" id="tripPageId" name="tripPageId" value="' . htmlspecialchars($trip["id"]) . '">
+                        <button type="submit" class="btn btn-maincolor tripPageBtn">Select Trip</button>
+                    </form>
                     <span>
                         <input type="hidden" id="editBtnId" name="editBtnId" value="' . htmlspecialchars($trip["id"]) . '">
                         <button type="" id="" class="text-maincolor editTripBtn btn btn-link" data-bs-toggle="modal" data-bs-target="#editTripModal">

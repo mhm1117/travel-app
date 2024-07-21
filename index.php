@@ -15,7 +15,8 @@
     <title>PNW Train Trip</title>
   </head>
   <body>
-    
+    <?php include "includes/tripPageHandling.inc.php"; ?> 
+
     <?php include "includes/tripImg.php" ?>
 
     <?php include "includes/nav.php" ?>
@@ -23,12 +24,10 @@
     <main class="d-flex flex-column container-fluid" style="height: 100vh;">
       
       <div id="content" class="d-flex flex-column container text-center gap-4" style="margin-top: 15vh;">
-        <h1 class="text-light" style="font-family: 'Northwest';-webkit-text-stroke: 2px;-webkit-text-stroke-color: var(--bs-dark);">PNW TRAIN JOURNEY</h1>
+        <h1 class="text-light" style="font-family: 'Northwest';-webkit-text-stroke: 2px;-webkit-text-stroke-color: var(--bs-dark);"><?php echo $trip["name"]; ?></h1>
         <div class="fw-bolder fs-3 text-light" style="max-width: 90%;-webkit-text-stroke: 2px;-webkit-text-stroke-color: var(--bs-dark);" id="tripSummary">
-          <p>We go on Amtrak train rides from the Bay Area
-          through Oregon and Washington, all the way to Seattle.
-          Then we either fly or take a train to Vancouver! 
-          Then we fly home from there!
+          <p>
+            <?php echo $trip["description"]; ?>
           </p>
         </div>
         <div class="fs-4 text-dark" style="max-width: 90%;-webkit-text-stroke: 1px;-webkit-text-stroke-color: var(--bs-dark);" id="tripDetails">
@@ -52,7 +51,7 @@
       </div>
     </main>
 
-    <?php include "includes/account/loginModal.php"?>
+    <?php include "includes/login/loginModal.php"?>
 
   </body>
 </html>
