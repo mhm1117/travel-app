@@ -1,6 +1,7 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $action = $_POST["fileSentFrom"];
     $tripName = $_POST["tripName"];
     $ppl = $_POST["tripPpl"];
     $locales = $_POST["tripLocales"];
@@ -16,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $endDate = strtotime($_POST["endInput"]);
         $timeline = date('m/d/y', $startDate) . " to " . date('m/d/y', $endDate);
     }
-
     try {
         require_once "../dbhandling.inc.php";
         
@@ -24,8 +24,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //     echo $key . " = " . $value . "<br>";
         // }
 
-        $query = "INSERT INTO trips (name, description, timeline, locations, people, est_budget, img) VALUES 
-        (:tripName, :descrip, :timeline, :locales, :ppl, :budget, :imgLink);";
+        if ($action == 'edit') {
+            $tripId = $_POST["tripIdEdit"];
+            $query = "UPDATE trips SET name = :tripName, description = :descrip, timeline = :timeline, locations = :locales,
+                people = :ppl, est_budget = :budget, img = :imgLink WHERE id = $tripId;";
+        } else if ($action == 'add') {
+            $query = "INSERT INTO trips (name, description, timeline, locations, people, est_budget, img) VALUES 
+                (:tripName, :descrip, :timeline, :locales, :ppl, :budget, :imgLink);";
+        } else {
+            die();
+        }
 
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(":tripName", $tripName);

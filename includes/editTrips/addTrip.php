@@ -21,19 +21,19 @@
                         <input type="text" id="tripLocales" name="tripLocales" class="form-control" placeholder="Seattle, Yellowstone, etc.">
                     </div>
                     
-                    <div class="" id="accordion1">
+                    <div class="" id="accordionAdd">
                         <div class="input-group mb-2">
                             <span class="input-group-text">Timeline:</span>
                             <button type="button" class="form-control collapsed yearBtn" data-bs-toggle="collapse" data-bs-target="#yearColl">Month/Year</button>
                             <button type="button" class="form-control collapsed dateBtn" data-bs-toggle="collapse" data-bs-target="#datesColl">Dates</button>
                         </div>
-                        <div class="accordion-collapse collapse show" id="yearColl" data-bs-parent="#accordion1">
+                        <div class="accordion-collapse collapse show" id="yearColl" data-bs-parent="#accordionAdd">
                             <div class="input-group mb-2">
                             <span class="input-group-text">Month/Year:</span>
                             <input type="text" id="monthYear" name="monthYear" class="form-control" placeholder="Month YYYY">
                             </div>
                         </div>
-                        <div class="accordion-collapse collapse" id="datesColl" data-bs-parent="#accordion1">
+                        <div class="accordion-collapse collapse" id="datesColl" data-bs-parent="#accordionAdd">
                             <input class="form-control" type="date" id="startInput" name="startInput" value="" min="2024-07-01" max="2030-12-31" />
                             <span class="input-group-text">to</span>
                             <input class="form-control" type="date" id="endInput" name="endInput" value="" min="2024-07-01" max="2030-12-31" />
@@ -55,9 +55,10 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                <input type="hidden" id="timelineInput" name="timelineInput" value="monthYear">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-maincolor">Add Trip</button>
+                    <input type="hidden" id="fileSentFrom" name="fileSentFrom" value="add">
+                    <input type="hidden" id="timelineInput" name="timelineInput" value="monthYear">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-maincolor">Add Trip</button>
                 </div>
             </form>
         </div>

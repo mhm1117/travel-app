@@ -4,43 +4,56 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
 
     setAddTripTimelineBtns();
-    setDeleteButtons();
+    setTripCardBtns();
 }
 
 function setAddTripTimelineBtns() {
 
     let addModal = document.querySelector("#addTripModal");
-    let yearBtn = addModal.querySelector(".yearBtn");
-    let dateBtn = addModal.querySelector(".dateBtn");
-    let timeline = addModal.querySelector("#timelineInput");
+    let editModal = document.querySelector("#editTripModal");
+    let yearBtns = document.querySelectorAll(".yearBtn");
+    let dateBtns = document.querySelectorAll(".dateBtn");
+    let timelineAdd = addModal.querySelector("#timelineInput");
+    let timelineEdit = editModal.querySelector("#timelineInputEdit");
 
-    let defaultStyle = yearBtn.style.border;
-    yearBtn.style.border = "1px var(--bs-maincolor) solid"
-    dateBtn.style.borderLeft = "1px var(--bs-maincolor) solid";
-    yearBtn.addEventListener("click", (event) => {
-        timeline.value = 'monthYear';
-        yearBtn.style.border = "1px var(--bs-maincolor) solid";
-        dateBtn.style.border = defaultStyle;
-        dateBtn.style.borderLeft = "1px var(--bs-maincolor) solid";
-    });
+    let defaultStyle = yearBtns[0].style.border;
 
-    dateBtn.addEventListener("click", (event) => {
-        timeline.value = 'dates';
-        dateBtn.style.border = "1px var(--bs-maincolor) solid"
-        yearBtn.style.border = defaultStyle;
-    });
+    for (let i = 0;i < 2;i++) {
+        yearBtns[i].style.border = "1px var(--bs-maincolor) solid";
+        dateBtns[i].style.borderLeft = "1px var(--bs-maincolor) solid";
+
+        yearBtns[i].addEventListener("click", (event) => {
+            timelineAdd.value = 'monthYear';
+            timelineEdit.value = 'monthYear';
+            yearBtns[i].style.border = "1px var(--bs-maincolor) solid";
+            dateBtns[i].style.border = defaultStyle;
+            dateBtns[i].style.borderLeft = "1px var(--bs-maincolor) solid";
+        });
+
+        dateBtns[i].addEventListener("click", (event) => {
+            timelineAdd.value = 'dates';
+            timelineEdit.value = 'dates';
+            dateBtns[i].style.border = "1px var(--bs-maincolor) solid"
+            yearBtns[i].style.border = defaultStyle;
+        });
+    }
 }
 
-function setDeleteButtons() {
+function setTripCardBtns() {
 
     let tripCards = document.querySelectorAll(".tripCard");
     let toDelInput = document.getElementById("tripIdDel");
+    let toEditInput = document.getElementById("tripIdEdit");
 
     for (let card of tripCards) {
         let tripId = card.id.split("-")[1];
         console.log(tripId + "\n");
         card.querySelector(".delTripBtn").addEventListener("click", (event) => {
             toDelInput.value = parseInt(tripId);
+        });
+
+        card.querySelector(".editTripBtn").addEventListener("click", (event) => {
+            toEditInput.value = parseInt(tripId);
         });
     }
 }

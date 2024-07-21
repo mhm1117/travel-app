@@ -11,7 +11,7 @@
         <div class="modal-footer">
             <form action="includes/editTrips/delTripHandling.inc.php" method="POST">
                 <input type="hidden" id="tripIdDel" name="tripIdDel" value="0">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 <button type="submit" class="btn btn-maincolor">Delete</button>
             </form>
         </div>

@@ -1,7 +1,10 @@
 @font-face { font-family: Northwest; src: url('../assets/NorthwestBold-M8xx.otf'); }
 
 body {
-    overflow-y: hidden;
+    overflow-y: scroll;
+}
+body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 /* .modal-open {
