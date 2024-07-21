@@ -47,7 +47,6 @@ function setTripCardBtns() {
 
     for (let card of tripCards) {
         let tripId = card.id.split("-")[1];
-        console.log(tripId + "\n");
         card.querySelector(".delTripBtn").addEventListener("click", (event) => {
             toDelInput.value = parseInt(tripId);
         });

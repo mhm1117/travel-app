@@ -3,7 +3,6 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tripId = $_POST["tripIdDel"];
 
-    echo $tripId;
     try {
         require_once "../dbhandling.inc.php";
 

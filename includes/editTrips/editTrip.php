@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Trip</h1>
+                <h1 class="modal-title fs-5">Edit Trip</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="includes/editTrips/tripFormHandling.inc.php" method="POST">
@@ -10,7 +10,7 @@
                     <p class="form-label fw-bold">Enter Details:</p>
                     <div class="input-group mb-2">
                         <span class="input-group-text">Name:</span>
-                        <input type="text" id="tripName" name="tripName" class="form-control" placeholder="Trip Name"> 
+                        <input type="text" id="tripName" name="tripName" class="form-control" placeholder="Trip Name" value=""> 
                     </div>
                     <div class="input-group mb-2">
                         <span class="input-group-text">Who's Going:</span>

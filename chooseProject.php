@@ -34,7 +34,7 @@
             </h1>
 
             <div id="trips" class="d-flex flex-wrap column-gap-4 justify-content-center">
-              <?php include "includes/tripCard.php"?>
+              <?php include "includes/editTrips/getTrips.php"?>
             </div>
         </div>
     </main>
@@ -46,4 +46,5 @@
 <?php include "includes/editTrips/delTrip.php"?>
 
 <?php include "includes/editTrips/editTrip.php"?>
+
 </html>
