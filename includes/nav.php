@@ -1,6 +1,5 @@
 <?php
     require_once "login/login_view.inc.php";
-    require_once "config_session.inc.php";
 ?>
 
 <nav class="navbar navbar-extend mt-3 mx-2 mx-md-4 d-flex flex-nowrap">
@@ -19,7 +18,7 @@
         <li><a class="dropdown-item text-center" id="changeTrip" href="chooseProject.php">Add/Switch Trip</a></li>
         </ul> 
     </div>
-    <a class="navbar-brand mx-auto fs-2 text-maincolor fw-bold d-none d-sm-inline" href="">Welcome Back, <?php output_username()?>!</a>
+    <span class="navbar-brand mx-auto fs-2 text-maincolor fw-bold d-none d-sm-inline">Welcome Back, <?php output_username()?>!</span>
     <div class="d-inline-flex column-gap-1">
         <?php login_btn(); ?>
         <button class="btn btn-maincolor text-light" id="searchBtn">

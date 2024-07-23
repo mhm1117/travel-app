@@ -1,3 +1,7 @@
+<?php
+  require_once "includes/config_session.inc.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,19 +26,23 @@
         <div id="content" class="bg-secondary-subtle rounded mt-6 w-75 mx-auto mb-4
                                   d-flex flex-column gap-4 justify-content-start
                                   gap-sm-6 pb-sm-4" style="top: 20%;">
-            <h1 class="text-maincolor fw-bolder mt-3">
-                <span class="ms-4 me-1">SWITCH TRIP</span>
-                <div class="d-inline-block">
-                    <a type="button" class="button btn-maincolor text-maincolor" data-bs-toggle="modal" data-bs-target="#addTripModal">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 20 20">
-                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
-                      </svg>
-                    </a>
-                </div>
-            </h1>
+
+            <?php if(isset($_SESSION["user_id"])) {
+              echo '
+                <h1 class="text-maincolor fw-bolder mt-3">
+                  <span class="ms-4 me-1">SWITCH TRIP</span>
+                  <div class="d-inline-block">
+                      <a type="button" class="button btn-maincolor text-maincolor" data-bs-toggle="modal" data-bs-target="#addTripModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 20 20">
+                          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+                        </svg>
+                      </a>
+                  </div>
+                </h1>'; } ?> 
+            
 
             <div id="trips" class="d-flex flex-wrap column-gap-4 justify-content-center">
-              <?php include "includes/editTrips/getTrips.php"?>
+              <?php require_once "includes/userTrips/getTrips.php"?>
             </div>
         </div>
     </main>

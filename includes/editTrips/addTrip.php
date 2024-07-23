@@ -14,11 +14,11 @@
                     </div>
                     <div class="input-group mb-2">
                         <span class="input-group-text">Who's Going:</span>
-                        <input type="text" id="tripPpl" name="tripPpl" class="form-control" placeholder="Mattie, Angie, etc."> 
+                        <input type="text" id="tripPpl" name="tripPpl" class="form-control" placeholder="Please separate with commas"> 
                     </div>
                     <div class="input-group mb-2">
                         <span class="input-group-text">Where are you going:</span>
-                        <input type="text" id="tripLocales" name="tripLocales" class="form-control" placeholder="Seattle, Yellowstone, etc.">
+                        <input type="text" id="tripLocales" name="tripLocales" class="form-control" placeholder="Please separate with commas">
                     </div>
                     
                     <div class="" id="accordionAdd">
@@ -42,7 +42,7 @@
 
                     <div class="input-group mb-2">
                         <span class="input-group-text" style="padding-right:5px;">Estimated Budget:&nbsp;&nbsp;&nbsp;$</span>
-                        <input type="text" id="tripBudget" name="tripBudget" class="form-control" placeholder="">
+                        <input type="text" id="tripBudget" name="tripBudget" class="form-control" placeholder="0.00">
                     </div>
                 
                     <div class="mb-2">
@@ -51,7 +51,7 @@
                     </div>
                     <div class="mb-2">
                         <span class="form-label fw-bold">Add an image!</span>
-                        <input class="form-control" type="tet" id="tripImg" name="tripImg" placeholder="Image URL">
+                        <input class="form-control" type="tet" id="tripImg" name="tripImg" placeholder="Image URLs Only">
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $budget = $_POST["tripBudget"];
     $descrip = $_POST["description"];
     $imgLink = $_POST["tripImg"];
+    $pplNames = explode(",", $ppl);
 
     if ($typeTimeline == "monthYear") {
         $timeline = $_POST["monthYear"];
@@ -45,6 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(":imgLink", $imgLink);
         
         $stmt->execute();
+        
+        if ($action === "add") {
+
+        }
 
         $pdo = null;
         $stmt = null;

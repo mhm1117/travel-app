@@ -1,29 +1,20 @@
 <?php
 
-try {
-    require_once "includes/dbhandling.inc.php";
-    
-    $query = "SELECT * FROM trips";
+declare(strict_types=1);
 
-    $stmt = $pdo->prepare($query);
-
-    $stmt->execute();
-
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    foreach ($results as $trip) {
-        echo '<div class="card mb-4 tripCard" style="width: 250px; height: fit-content;" id="tripCard-' . htmlspecialchars($trip["id"]) . '">
-                <img src="' . htmlspecialchars($trip["img"]) . '" class="d-none d-sm-block card-img-top" alt="trip-image" style="max-height: 6.2em;">
-                <div class="card-body">
+function output_trip(array $trip) {
+    echo '<div class="card mb-4 tripCard" style="width: 250px; height: fit-content;" id="tripCard-' . htmlspecialchars(strval($trip["id"])) . '">
+            <img src="' . htmlspecialchars($trip["img"]) . '" class="d-none d-sm-block card-img-top" alt="trip-image" style="max-height: 6.2em;">
+            <div class="card-body">
                 <h5 class="card-title">' . htmlspecialchars($trip["name"]) . '</h5>
                 <p class="card-text">' . htmlspecialchars($trip["description"]) . '</p>
                 <div class="d-flex flex-nowrap align-items-center justify-content-between">
                     <form action="tripPage.php" method="post">  
-                        <input type="hidden" id="tripPageId" name="tripPageId" value="' . htmlspecialchars($trip["id"]) . '">
+                        <input type="hidden" id="tripPageId" name="tripPageId" value="' . htmlspecialchars(strval($trip["id"])) . '">
                         <button type="submit" class="btn btn-maincolor tripPageBtn">Select Trip</button>
                     </form>
                     <span>
-                        <input type="hidden" id="editBtnId" name="editBtnId" value="' . htmlspecialchars($trip["id"]) . '">
+                        <input type="hidden" id="editBtnId" name="editBtnId" value="' . htmlspecialchars(strval($trip["id"])) . '">
                         <button type="" id="" class="text-maincolor editTripBtn btn btn-link" data-bs-toggle="modal" data-bs-target="#editTripModal">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentcolor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
@@ -37,13 +28,6 @@ try {
                         </a>
                     </span>
                 </div>
-                </div>
-            </div>';
-    }
-
-    $pdo = null;
-    $stmt = null;
-
-} catch (PDOException $e) {
-    die("Query Failed: " . $e->getMessage());
+            </div>
+        </div>';
 }
