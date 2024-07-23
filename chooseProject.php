@@ -39,7 +39,6 @@
         </div>
     </main>
 </body>
-<?php include "includes/login/loginModal.php"?>
 
 <?php include "includes/editTrips/addTrip.php"?>
 
