@@ -1,4 +1,5 @@
 <?php
+include "../config_session.inc.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $action = $_POST["fileSentFrom"];
@@ -9,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $budget = $_POST["tripBudget"];
     $descrip = $_POST["description"];
     $imgLink = $_POST["tripImg"];
-    $pplNames = explode(",", $ppl);
 
     if ($typeTimeline == "monthYear") {
         $timeline = $_POST["monthYear"];
@@ -20,11 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     try {
         require_once "../dbhandling.inc.php";
+        require_once "addTrip_model.inc.php";
+        require_once "addTrip_contr.inc.php";
         
         // foreach ($_POST as $key => $value) {
         //     echo $key . " = " . $value . "<br>";
         // }
 
+        
         if ($action == 'edit') {
             $tripId = $_POST["tripIdEdit"];
             $query = "UPDATE trips SET name = :tripName, description = :descrip, timeline = :timeline, locations = :locales,
@@ -47,8 +50,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $stmt->execute();
         
-        if ($action === "add") {
 
+        // create trip_users row for each person in trip that has username
+        if ($action === "add") {
+            
+            $pplNew = str_replace(' ', '', $ppl);
+            $pplNames = explode(",", $pplNew);
+
+            foreach($pplNames as $userName) {
+                if (is_user($pdo, $userName)) {
+                    bind_trip_users($pdo, $userName, $tripName);
+                }
+            }
         }
 
         $pdo = null;

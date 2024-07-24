@@ -11,8 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_SESSION["user_id"])) {
 
         $tripIds = get_user_tripIds($pdo, $username);
         foreach ($tripIds as $tripId) {
-            $trip = get_trip_from_id($pdo, $tripId["trip_id"]);
-            output_trip($trip);
+            if (!is_null($tripId["trip_id"])) {
+                $trip = get_trip_from_id($pdo, $tripId["trip_id"]);
+                output_trip($trip);
+            }
         }
     
         $pdo = null;
