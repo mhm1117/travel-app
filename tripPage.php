@@ -55,5 +55,6 @@ include "includes/config_session.inc.php";
       </div>
     </main>
 
+    <?php include "includes/footer.inc.php" ?>
   </body>
 </html>

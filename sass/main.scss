@@ -29,5 +29,14 @@ $more-spacers: (
 
 $spacers: map-merge($more-spacers, $spacers);
 
+$more-font-sizes: (
+    md: 2em,
+    lg: 3em,
+    xl: 4em,
+    xxl: 5em
+);
+
+$font-sizes: map-merge($more-font-sizes, $font-sizes);
+
 // import bootstrap
 @import '../node_modules/bootstrap/scss/bootstrap';

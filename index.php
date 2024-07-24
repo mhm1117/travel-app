@@ -24,8 +24,14 @@ require_once "includes/config_session.inc.php";
     <!-- <form action="includes/login/logout.inc.php" method="post" class="position-absolute top-0 end-0 mt-3 me-3">
         <button type="submit" class="btn btn-light fw-bold">Log Out</button>
     </form> -->
-    <div id="signInCont" class="container d-flex flex-column mt-6 mb-5 mx-auto py-2 w-75
-                 rounded-4 bg-white" style="max-width: 500px">
+
+    <h1 class="fw-bold text-mainlight bg-white mx-auto mt-5 pb-2 px-3 rounded-4 fs-lg mt-sm-7" 
+    style="width: fit-content;">Travel App</h1>
+    
+
+    <div id="loginDiv" class="container d-flex flex-column 
+    position-absolute top-50 start-50 translate-middle py-2 w-75 rounded-4 bg-white" 
+    style="max-width: 500px">
             <h2 class="fw-bold text-center" id="signInLabel">Log In</h2>
             <form action="includes/login/login.inc.php" method="POST">
                 <div class="mb-3">
@@ -39,13 +45,14 @@ require_once "includes/config_session.inc.php";
                     <?php check_login_errors(); ?>
                 </div>
                 <div class="text-center">
-                    <button type="submit" id="logInBtn" class="btn btn-mainlight px-3 fw-bold">Log In</button>
+                    <button type="submit" id="logInBtn" class="btn btn-mainlight px-3 fw-bold">Log In</butto>
                 </div>
             </form>
+            <a id="createAcctBtn" class="link link-maincolor text-end me-2 my-2" href="#signupDiv">Create Account</a>
     </div>
 
-    <div id="signInCont" class="container d-flex flex-column mx-auto py-2 w-75
-                 rounded-4 bg-white" style="max-width: 500px">
+    <div id="signupDiv" class="d-none container d-flex flex-column position-absolute top-50 start-50 translate-middle py-2 w-75
+                 rounded-4 bg-white" style="max-width: 500px;">
             <h2 class="fw-bold text-center" id="signInLabel">Create Account</h2>
             <form action="includes/signup/signup.inc.php" method="POST">
                 <div class="mb-3">
@@ -61,7 +68,10 @@ require_once "includes/config_session.inc.php";
                     <button type="submit" id="signUpBtn" class="btn btn-mainlight px-3 fw-bold">Sign Up</button>
                 </div>
             </form>
+            <a id="alreadyAcctBtn" class="link link-maincolor text-end me-2 my-2" href="#loginDiv">Already have an account?</a>
     </div>
+
+    <?php include "includes/footer.inc.php" ?>
 </body>
 </html>
 
