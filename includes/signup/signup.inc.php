@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (is_username_taken($pdo, $username)) {
             $errors["username_taken"] = "Username already taken!";
         }
-        if (is_pin_invalid($pin)) {
+        if (!isset($errors["empty_input"]) && is_pin_invalid($pin)) {
             $errors["invalid_pin"] = "Pin is invalid! Must be 4 digits!";
         }
 
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $signupUsername = $username;
             $_SESSION["signup_username"] = $signupUsername;
             
-            header("Location: ../../index.php");
+            header("Location: ../../createAccount.php");
             die();
         }
 
@@ -46,6 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Query failed: " . $e->getMessage());
     }
 } else {
-    header("Location: ../../index.php");
+    header("Location: ../../createAccount.php");
     die();
 }

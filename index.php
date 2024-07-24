@@ -25,50 +25,34 @@ require_once "includes/config_session.inc.php";
         <button type="submit" class="btn btn-light fw-bold">Log Out</button>
     </form> -->
 
-    <h1 class="fw-bold text-mainlight bg-white mx-auto mt-5 pb-2 px-3 rounded-4 fs-lg mt-sm-7" 
-    style="width: fit-content;">Travel App</h1>
+    <a class="text-decoration-none link-mainlight" href="index.php">
+        <h1 class="fw-bold text-mainlight bg-white mx-auto mt-5 pb-2 px-3 rounded-4 fs-lg mt-sm-7" 
+        style="width: fit-content;">Travel App</h1>
+    </a>
     
-
     <div id="loginDiv" class="container d-flex flex-column 
     position-absolute top-50 start-50 translate-middle py-2 w-75 rounded-4 bg-white" 
     style="max-width: 500px">
-            <h2 class="fw-bold text-center" id="signInLabel">Log In</h2>
-            <form action="includes/login/login.inc.php" method="POST">
-                <div class="mb-3">
-                    <label for="username" class="form-label fw-bold fs-5">Name:</label>
-                    <input type="text" id="usernameLI" name="username" class="form-control mb-2" placeholder="Your first name.">
+        <div id="signupSuccMsg" class="mb-3 text-center fw-bold">
+            <?php check_signup_success(); ?>
+        </div>
+        <h2 class="fw-bold text-center" id="signInLabel">Log In</h2>
+        <form action="includes/login/login.inc.php" method="POST">
+            <div class="mb-3">
+                <label for="username" class="form-label fw-bold fs-5">Name:</label>
+                <input type="text" id="usernameLI" name="username" class="form-control mb-2" placeholder="Your first name.">
 
-                    <label for="pin" class="form-label fw-bold fs-5">Pin:</label>
-                    <input type="password" id="pinLI" name="pin" class="form-control mb-2" placeholder="Your 4 digit passcode.">
-                </div>  
-                <div id="logInErrs" class="mb-3 text-center fw-bold">
-                    <?php check_login_errors(); ?>
-                </div>
-                <div class="text-center">
-                    <button type="submit" id="logInBtn" class="btn btn-mainlight px-3 fw-bold">Log In</butto>
-                </div>
-            </form>
-            <a id="createAcctBtn" class="link link-maincolor text-end me-2 my-2" href="#signupDiv">Create Account</a>
-    </div>
-
-    <div id="signupDiv" class="d-none container d-flex flex-column position-absolute top-50 start-50 translate-middle py-2 w-75
-                 rounded-4 bg-white" style="max-width: 500px;">
-            <h2 class="fw-bold text-center" id="signInLabel">Create Account</h2>
-            <form action="includes/signup/signup.inc.php" method="POST">
-                <div class="mb-3">
-                    <label for="username" class="form-label fw-bold fs-5">Name:</label>
-                    <?php signup_username_input(); ?>
-                    <label for="pin" class="form-label fw-bold fs-5">Pin:</label>
-                    <input type="password" id="pinSU" name="pin" class="form-control mb-2" placeholder="Create a 4 digit passcode.">
-                </div>  
-                <div id="signUpErrs" class="mb-3 text-center fw-bold">
-                    <?php check_signup_errors(); ?>
-                </div>
-                <div class="text-center">
-                    <button type="submit" id="signUpBtn" class="btn btn-mainlight px-3 fw-bold">Sign Up</button>
-                </div>
-            </form>
-            <a id="alreadyAcctBtn" class="link link-maincolor text-end me-2 my-2" href="#loginDiv">Already have an account?</a>
+                <label for="pin" class="form-label fw-bold fs-5">Pin:</label>
+                <input type="password" id="pinLI" name="pin" class="form-control mb-2" placeholder="Your 4 digit passcode.">
+            </div>  
+            <div id="logInErrs" class="mb-3 text-center fw-bold">
+                <?php check_login_errors(); ?>
+            </div>
+            <div class="text-center">
+                <button type="submit" id="logInBtn" class="btn btn-mainlight px-3 fw-bold">Log In</butto>
+            </div>
+        </form>
+        <a id="createAcctBtn" class="link link-maincolor text-end me-2 my-2" href="createAccount.php">Create Account</a>
     </div>
 
     <?php include "includes/footer.inc.php" ?>

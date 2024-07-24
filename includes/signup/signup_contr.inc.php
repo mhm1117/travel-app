@@ -23,7 +23,7 @@ function is_username_taken(object $pdo, string $username) {
 function is_pin_invalid(string $pin) {
 
     $pattern = '/^[0-9]+$/';
-    if (!preg_match($pattern, $pin)) {
+    if (!preg_match($pattern, $pin) || strlen($pin) != 4) {
         return true;
     } else {
         return false;

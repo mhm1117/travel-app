@@ -25,9 +25,9 @@ include "includes/config_session.inc.php";
 
     <?php include "includes/nav.php" ?>
 
-    <main class="d-flex flex-column container-fluid" style="height: 100vh;">
+    <main class="d-flex flex-column container-fluid">
       
-      <div id="content" class="d-flex flex-column container text-center gap-4" style="margin-top: 15vh;">
+      <div id="" class="d-flex flex-column container text-center gap-4" style="margin-top: 15vh;">
         <h1 class="text-light" style="font-family: 'Northwest';-webkit-text-stroke: 2px;-webkit-text-stroke-color: var(--bs-dark);"><?php echo $trip["name"]; ?></h1>
         <div class="fw-bolder fs-3 text-light" style="max-width: 90%;-webkit-text-stroke: 2px;-webkit-text-stroke-color: var(--bs-dark);" id="tripSummary">
           <p>
