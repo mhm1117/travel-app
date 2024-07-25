@@ -14,3 +14,9 @@ body::-webkit-scrollbar {
 #content {
     border: 2px var(--bs-maincolor) solid;
 }
+
+#trip-info {
+    * {
+        margin: auto;
+    }
+}

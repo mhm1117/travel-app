@@ -26,7 +26,7 @@ require_once "includes/config_session.inc.php";
 
     <main class="d-flex flex-column container-fluid">
       
-      <div id="" class="d-flex flex-column container text-center gap-4" style="margin-top: 15vh;">
+      <div id="trip-info" class="d-flex flex-column container text-center gap-4" style="margin-top: 15vh;">
         <?php display_trip_info() ?>
       </div>
     </main>

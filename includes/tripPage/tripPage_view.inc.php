@@ -27,11 +27,11 @@ function display_trip_info () {
     }
 
     echo '
-        <h1 class="text-dark" style="">' . $trip["name"] . '</h1>
-        <div class="fw-bolder fs-3 text-light" style="max-width: 90%;-webkit-text-stroke: 2px;-webkit-text-stroke-color: var(--bs-dark);" id="tripSummary">
+        <h1 class="text-dark fw-bold" style="">' . $trip["name"] . '</h1>
+        <div class="fw-bold fs-3 text-dark" style="max-width: 90%;" id="tripSummary">
             <p>' . $trip["description"] . '</p>
         </div>
-        <div class="fs-4 text-dark" style="max-width: 90%;-webkit-text-stroke: 1px;-webkit-text-stroke-color: var(--bs-dark);" id="tripDetails">
+        <div class="fs-4 text-dark" style="max-width: 90%;" id="tripDetails">
             <div class="row py-2">
                 <div class="col px-5">
                     <span class="fw-bold">Timeline: </span>

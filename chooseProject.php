@@ -31,7 +31,7 @@
             <?php if(isset($_SESSION["user_id"])) {
               echo '
                 <h1 class="text-maincolor fw-bolder mt-3">
-                  <span class="ms-4 me-1">SWITCH TRIP</span>
+                  <span class="ms-4 me-1">SELECT TRIP</span>
                   <div class="d-inline-block">
                       <a type="button" class="button btn-maincolor text-maincolor" data-bs-toggle="modal" data-bs-target="#addTripModal">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 20 20">
