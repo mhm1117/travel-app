@@ -33,7 +33,7 @@ require_once "includes/config_session.inc.php";
     <div id="loginDiv" class="container d-flex flex-column 
     position-absolute top-50 start-50 translate-middle py-2 w-75 rounded-4 bg-white" 
     style="max-width: 500px">
-        <div id="signupSuccMsg" class="mb-3 text-center fw-bold">
+        <div id="signupSuccMsg" class="text-center fw-bold">
             <?php check_signup_success(); ?>
         </div>
         <h2 class="fw-bold text-center" id="signInLabel">Log In</h2>
