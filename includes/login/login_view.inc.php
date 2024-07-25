@@ -16,12 +16,12 @@ function login_btn() {
     if (isset($_SESSION["user_id"])) {
         echo '
         <form action="includes/login/logout.inc.php" method="POST">
-            <button type="submit" id="navLoginBtn" class="btn btn-maincolor fw-bold h-100">Log Out</button>
+            <button type="submit" id="navLoginBtn" class="btn btn-maincolor text-light fw-bold h-100">Log Out</button>
         </form>';
     } else {
         echo '
         <form action="index.php" method="POST">
-            <button type="submit" id="navLoginBtn" class="btn btn-maincolor fw-bold h-100">Log In</button>
+            <button type="submit" id="navLoginBtn" class="btn btn-maincolor text-light fw-bold h-100">Log In</button>
         </form>';
     }
 }

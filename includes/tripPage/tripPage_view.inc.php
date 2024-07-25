@@ -1,0 +1,56 @@
+<?php
+declare(strict_types= 1);
+
+function output_tripname() {
+    if (isset($_SESSION["tripid"])) {
+        echo $_SESSION["tripname"];
+    } else {
+        echo "No Trip Selected";
+    }
+}
+
+function display_trip_img() {
+    $trip = $_SESSION["tripArray"];
+    echo '
+        <div class="z-n1">
+            <img class="z-n1 position-absolute top-50 start-50 translate-middle opacity-75" 
+            style="max-width: 100%;" src="' . $trip["img"] . '">
+        </div>';
+    
+}
+
+function display_trip_info () {
+    $trip = $_SESSION["tripArray"];
+
+    if ($trip["est_budget"] === 0) {
+        $tripBudget = 'Unknown';
+    }
+
+    echo '
+        <h1 class="text-dark" style="">' . $trip["name"] . '</h1>
+        <div class="fw-bolder fs-3 text-light" style="max-width: 90%;-webkit-text-stroke: 2px;-webkit-text-stroke-color: var(--bs-dark);" id="tripSummary">
+            <p>' . $trip["description"] . '</p>
+        </div>
+        <div class="fs-4 text-dark" style="max-width: 90%;-webkit-text-stroke: 1px;-webkit-text-stroke-color: var(--bs-dark);" id="tripDetails">
+            <div class="row py-2">
+                <div class="col px-5">
+                    <span class="fw-bold">Timeline: </span>
+                    <span>' . $trip["timeline"] . '</span>
+                </div>
+                <div class="col px-5">
+                    <span class="fw-bold">Locations: </span>
+                    <span>' . $trip["locations"] . '</span>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col px-5">
+                    <span class="fw-bold">Est. Budget: </span>
+                    <span>' . $tripBudget . '</span>
+                </div>
+                <div class="col px-5">
+                    <span class="fw-bold">Who is Going: </span>
+                    <span>' . $trip["people"] . '</span>
+                </div>
+            </div>
+        </div>';
+}

@@ -1,5 +1,6 @@
 <?php
   require_once "includes/config_session.inc.php";
+  require_once "includes/tripPage/tripPage_view.inc.php";
 ?>
 
 <!DOCTYPE html>

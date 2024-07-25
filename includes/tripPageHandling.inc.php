@@ -1,23 +1,29 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $tripId = $_POST["tripPageId"];
+    $tripid = $_POST["tripPageId"];
 
     try {
         require_once "dbhandling.inc.php";
+        require_once "tripPage/tripPage_model.inc.php";
 
-        $query = "SELECT * FROM trips WHERE id = :id";
+        $trip = get_trip_from_id($pdo, $tripid);
 
-        $stmt = $pdo->prepare($query);
-        $stmt->bindParam(":id", $tripId);
-        $stmt->execute();
-        $trip = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
+        require_once "config_session.inc.php";
+
+        $_SESSION["tripid"] = $trip["id"];
+        $_SESSION["tripname"] = $trip["name"];
+        $_SESSION["tripArray"] = $trip;
+
+        header("Location: ../tripPage.php");
 
         $pdo = null;
         $stmt = null;
+        die();
     } catch (PDOException $e) {
         die("Query Failed: " . $e->getMessage());
     }
 } else {
-    
+    header("Location: ../chooseProject.php");
+    die();
 }

@@ -9,9 +9,9 @@ function output_trip(array $trip) {
                 <h5 class="card-title">' . htmlspecialchars($trip["name"]) . '</h5>
                 <p class="card-text">' . htmlspecialchars($trip["description"]) . '</p>
                 <div class="d-flex flex-nowrap align-items-center justify-content-between">
-                    <form action="tripPage.php" method="post">  
+                    <form action="includes/tripPageHandling.inc.php" method="post">  
                         <input type="hidden" id="tripPageId" name="tripPageId" value="' . htmlspecialchars(strval($trip["id"])) . '">
-                        <button type="submit" class="btn btn-maincolor tripPageBtn">Select Trip</button>
+                        <button type="submit" class="btn btn-maincolor text-light fw-bold tripPageBtn">Select Trip</button>
                     </form>
                     <span>
                         <input type="hidden" id="editBtnId" name="editBtnId" value="' . htmlspecialchars(strval($trip["id"])) . '">

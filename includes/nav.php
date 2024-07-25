@@ -18,7 +18,17 @@
         <li><a class="dropdown-item text-center" id="changeTrip" href="chooseProject.php">Add/Switch Trip</a></li>
         </ul> 
     </div>
-    <span class="navbar-brand mx-auto fs-2 text-maincolor fw-bold d-none d-sm-inline">Welcome Back, <?php output_username()?>!</span>
+    <span class="navbar-brand mx-auto fs-2 text-maincolor fw-bold d-none d-sm-inline"> 
+        <?php 
+        if (isset($_SESSION["tripid"])) {
+            output_tripname();
+        } else {
+            echo 'Welcome, ';
+            output_username();
+            echo '!';
+        }
+        ?>
+    </span>
     <div class="d-inline-flex column-gap-1">
         <?php login_btn(); ?>
         <button class="btn btn-maincolor text-light" id="searchBtn">
