@@ -3,8 +3,24 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
 
+    getTripData();
     setAddTripTimelineBtns();
     setTripCardBtns();
+}
+
+async function getTripData() {
+    const dataF = '../includes/userTrips/tripData.inc.php';
+    try {
+        const response = await fetch(dataF);
+        if (!response.ok) {
+            throw new Error('Response status: ${response.status}');
+        }
+
+        const json = await response.json();
+        console.log(json);
+    } catch (error) {
+        console.error(error.message);
+    }
 }
 
 function setAddTripTimelineBtns() {
