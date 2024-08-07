@@ -1,5 +1,6 @@
 <?php
     require_once "login/login_view.inc.php";
+    require_once "includes/tripPage/tripPage_view.inc.php";
 ?>
 
 <nav class="navbar navbar-extend mt-3 mx-2 mx-md-4 d-flex flex-nowrap">
@@ -15,7 +16,7 @@
         <li><a class="dropdown-item" href="#">Budget Tracker</a></li>
         <li><a class="dropdown-item" href="#">Notes</a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item text-center" id="changeTrip" href="chooseProject.php">Add/Switch Trip</a></li>
+        <li><a class="dropdown-item text-center" id="changeTrip" href="chooseTrip.php">Add/Switch Trip</a></li>
         </ul> 
     </div>
     <span class="navbar-brand mx-auto fs-2 text-maincolor fw-bold d-none d-sm-inline"> 

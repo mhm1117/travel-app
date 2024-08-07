@@ -24,6 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Query Failed: " . $e->getMessage());
     }
 } else {
-    header("Location: ../chooseProject.php");
+    header("Location: ../chooseTrip.php");
     die();
 }

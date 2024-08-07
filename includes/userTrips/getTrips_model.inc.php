@@ -20,7 +20,7 @@ function get_trip_from_id(object $pdo, int $tripId) {
     $stmt->bindParam(":tripId", $tripId);
     $stmt->execute();
 
-    $result = $stmt->fetch();
+    $result = $stmt->fetch($pdo::FETCH_ASSOC);
 
     return $result;
 }

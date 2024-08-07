@@ -5,24 +5,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         require_once "../dbhandling.inc.php";
+        require_once "deleteTrip_model.inc.php";
 
-        $query = "DELETE FROM trips WHERE id = :id";
+        delete_trip($pdo, $tripId);
 
-        $stmt = $pdo->prepare($query);
-
-        $stmt->bindParam(":id", $tripId);
-
-        $stmt->execute();
+        delete_trip_tripusers($pdo);
 
         $pdo = null;
         $stmt = null;
 
-        header("Location: ../../chooseProject.php");
+        header("Location: ../../chooseTrip.php");
 
         die();
     } catch (PDOException $e) {
         die("Query Failed: " . $e->getMessage());
     }
 } else {
-    header("Location: ../../chooseProject.php");
+    header("Location: ../../chooseTrip.php");
 }

@@ -32,6 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $tripId = $_POST["tripIdEdit"];
             $query = "UPDATE trips SET name = :tripName, description = :descrip, timeline = :timeline, locations = :locales,
                 people = :ppl, est_budget = :budget, img = :imgLink WHERE id = $tripId;";
+
+            update_tripuser_tripname($pdo, $tripId, $tripName);
+        
         } else if ($action == 'add') {
             $query = "INSERT INTO trips (name, description, timeline, locations, people, est_budget, img) VALUES 
                 (:tripName, :descrip, :timeline, :locales, :ppl, :budget, :imgLink);";
@@ -49,30 +52,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(":imgLink", $imgLink);
         
         $stmt->execute();
-        
 
         // create trip_users row for each person in trip that has username
-        if ($action === "add") {
-            
-            $pplNew = str_replace(' ', '', $ppl);
-            $pplNames = explode(",", $pplNew);
+        $pplNew = str_replace(' ', '', $ppl);
+        $pplNames = explode(",", $pplNew);
 
-            foreach($pplNames as $userName) {
-                if (is_user($pdo, $userName)) {
-                    bind_trip_users($pdo, $userName, $tripName);
-                }
+        foreach($pplNames as $userName) {
+            if (is_user($pdo, $userName) && !has_tripuser_entry($pdo, $tripName, $userName)) {
+                bind_trip_users($pdo, $userName, $tripName);
             }
         }
 
         $pdo = null;
         $stmt = null;
 
-        header("Location: ../../chooseProject.php");
+        header("Location: ../../chooseTrip.php");
 
         die();
     } catch (PDOException $e) {
         die("Query Failed: " . $e->getMessage());
     }
 } else {
-    header("Location: ../../chooseProject.php");
+    header("Location: ../../chooseTrip.php");
 }

@@ -7,6 +7,7 @@
         </div>
         <div class="modal-body">
             <p class="fs-5">Are you sure you want to <span class="fw-bolder"><u>DELETE</u></span> this trip?</p>
+            <p class="fs-6 text-danger">*Note, will delete trip for <span class="fw-bolder"><u>ALL</u></span> users!</p>
         </div>  
         <div class="modal-footer">
             <form action="includes/editTrips/delTripHandling.inc.php" method="POST">

@@ -19,3 +19,13 @@ function is_user(object $pdo, string $username) {
         return false;
     }
 }
+
+function has_tripuser_entry(object $pdo, string $tripname, string $username) {
+    $result = get_tripuser_entry($pdo, $tripname, $username);
+
+    if ($result) { 
+        return true;
+    } else {
+        return false;
+    }
+}

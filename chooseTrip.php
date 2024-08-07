@@ -1,6 +1,7 @@
 <?php
   require_once "includes/config_session.inc.php";
-  require_once "includes/tripPage/tripPage_view.inc.php";
+  require_once "includes/userTrips/getTrips.php";
+  require_once "includes/userTrips/chooseTrip_view.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +44,9 @@
             
 
             <div id="trips" class="d-flex flex-wrap column-gap-4 justify-content-center">
-              <?php require_once "includes/userTrips/getTrips.php"?>
+              <?php 
+                output_trip_cards();
+              ?>
             </div>
         </div>
     </main>
@@ -51,10 +54,12 @@
     <?php include "includes/footer.inc.php" ?>
 </body>
 
-<?php include "includes/editTrips/addTrip.php"?>
+<?php include "includes/editTrips/addTrip.php" ?>
 
-<?php include "includes/editTrips/delTrip.php"?>
+<?php include "includes/editTrips/delTrip.php" ?>
 
-<?php include "includes/editTrips/editTrip.php"?>
+<?php //include "includes/editTrips/editTrip.php" ?>
 
+<?php output_edit_modals(); ?>
+ 
 </html>

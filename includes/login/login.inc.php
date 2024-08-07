@@ -39,11 +39,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_id($sessionId);
 
         $_SESSION["user_id"] = $result["id"];
-        $_SESSION["user_username"] = htmlspecialchars($result["username"]);
-
         $_SESSION["last_regeneration"] = time();
 
-        header("Location: ../../chooseProject.php?login=success");
+        $_SESSION["user_username"] = htmlspecialchars($result["username"]);
+
+        require_once "../userTrips/getTrips_model.inc.php";
+
+        $tripIds = get_user_tripIds($pdo, $username);   // get trip ids linked to username
+        // get all trips for that user using those trip ids and store in array
+        $user_trips = [];
+        foreach ($tripIds as $tripId) {
+            if (!is_null($tripId["trip_id"])) {
+                $trip = get_trip_from_id($pdo, $tripId["trip_id"]);
+                $user_trips[$tripId["trip_id"]] = $trip;
+            }
+        }
+
+        $_SESSION["user_trips"] = $user_trips;
+
+        header("Location: ../../chooseTrip.php?login=success");
 
         $pdo = null;
         $stmt = null;

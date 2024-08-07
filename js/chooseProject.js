@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
 
-    getTripData();
+    setEditTripTimelineBtns();
     setAddTripTimelineBtns();
     setTripCardBtns();
 }
@@ -15,7 +15,7 @@ async function getTripData() {
         if (!response.ok) {
             throw new Error('Response status: ${response.status}');
         }
-
+        // console.log(response)
         const json = await response.json();
         console.log(json);
     } catch (error) {
@@ -26,29 +26,52 @@ async function getTripData() {
 function setAddTripTimelineBtns() {
 
     let addModal = document.querySelector("#addTripModal");
-    let editModal = document.querySelector("#editTripModal");
-    let yearBtns = document.querySelectorAll(".yearBtn");
-    let dateBtns = document.querySelectorAll(".dateBtn");
+    let yearBtn = addModal.querySelector(".yearBtn");
+    let dateBtn = addModal.querySelector(".dateBtn");
     let timelineAdd = addModal.querySelector("#timelineInput");
-    let timelineEdit = editModal.querySelector("#timelineInputEdit");
+
+    let defaultStyle = yearBtn.style.border;
+    yearBtn.style.border = "1px var(--bs-maincolor) solid";
+    dateBtn.style.borderLeft = "1px var(--bs-maincolor) solid";
+
+    yearBtn.addEventListener("click", (event) => {
+        timelineAdd.value = 'monthYear';
+        yearBtn.style.border = "1px var(--bs-maincolor) solid";
+        dateBtn.style.border = defaultStyle;
+        dateBtn.style.borderLeft = "1px var(--bs-maincolor) solid";
+    });
+
+    dateBtn.addEventListener("click", (event) => {
+        timelineAdd.value = 'dates';
+        dateBtn.style.border = "1px var(--bs-maincolor) solid"
+        yearBtn.style.border = defaultStyle;
+    });
+}
+
+function setEditTripTimelineBtns() {
+    let yearBtns = document.querySelectorAll(".editTripModal .yearBtn");
+    let dateBtns = document.querySelectorAll(".editTripModal .dateBtn");
+    let timelineInputs = document.querySelectorAll(".editTripModal .timelineInputEdit");
 
     let defaultStyle = yearBtns[0].style.border;
-
-    for (let i = 0;i < 2;i++) {
-        yearBtns[i].style.border = "1px var(--bs-maincolor) solid";
-        dateBtns[i].style.borderLeft = "1px var(--bs-maincolor) solid";
-
+    for (let i = 0; i < yearBtns.length; i++) {
+        if (timelineInputs[i].value == 'monthYear') {
+            yearBtns[i].style.border = "1px var(--bs-maincolor) solid";
+            dateBtns[i].style.borderLeft = "1px var(--bs-maincolor) solid";
+        } else {
+            dateBtns[i].style.border = "1px var(--bs-maincolor) solid"
+            yearBtns[i].style.border = defaultStyle;
+        }
+    
         yearBtns[i].addEventListener("click", (event) => {
-            timelineAdd.value = 'monthYear';
-            timelineEdit.value = 'monthYear';
+            timelineInputs[i].value = 'monthYear';
             yearBtns[i].style.border = "1px var(--bs-maincolor) solid";
             dateBtns[i].style.border = defaultStyle;
             dateBtns[i].style.borderLeft = "1px var(--bs-maincolor) solid";
         });
-
+    
         dateBtns[i].addEventListener("click", (event) => {
-            timelineAdd.value = 'dates';
-            timelineEdit.value = 'dates';
+            timelineInputs[i].value = 'dates';
             dateBtns[i].style.border = "1px var(--bs-maincolor) solid"
             yearBtns[i].style.border = defaultStyle;
         });
