@@ -24,6 +24,8 @@ function display_trip_info () {
 
     if ($trip["est_budget"] === 0) {
         $tripBudget = 'Unknown';
+    } else {
+        $tripBudget = "$" . $trip['est_budget'];
     }
 
     echo '
