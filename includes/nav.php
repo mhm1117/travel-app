@@ -12,7 +12,7 @@
         </button>
         <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="#">Calendar</a></li>
-        <li><a class="dropdown-item" href="#">Event List</a></li>
+        <li><a class="dropdown-item" href="tripEvents.php">Event List</a></li>
         <li><a class="dropdown-item" href="#">Budget Tracker</a></li>
         <li><a class="dropdown-item" href="#">Notes</a></li>
         <li><hr class="dropdown-divider"></li>

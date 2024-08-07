@@ -1,3 +1,5 @@
+/* FOR ALL */
+
 @font-face { font-family: Northwest; src: url('../assets/NorthwestBold-M8xx.otf'); }
 
 body {
@@ -7,14 +9,8 @@ body::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
 }
 
-/* .modal-open {
-    overflow: inherit;
-} */
-
-#content {
-    border: 2px var(--bs-maincolor) solid;
-}
-
+/* FOR: tripPage.php */
+/* centers trip info text */
 #trip-info {
     * {
         margin: auto;
