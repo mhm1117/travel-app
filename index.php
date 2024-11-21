@@ -18,7 +18,7 @@ require_once "includes/config_session.inc.php";
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
     <link rel="icon" type="image/x-icon" href="assets/travel-icon.svg">
-    <title>Travel App</title>
+    <title>Travel Planner</title>
 </head>
 <body class="bg-mainlight">
     <!-- <form action="includes/login/logout.inc.php" method="post" class="position-absolute top-0 end-0 mt-3 me-3">
@@ -27,7 +27,7 @@ require_once "includes/config_session.inc.php";
 
     <a class="text-decoration-none link-mainlight" href="index.php">
         <h1 class="fw-bold text-mainlight bg-white mx-auto mt-5 pb-2 px-3 rounded-4 fs-lg mt-sm-7" 
-        style="width: fit-content;">Travel App</h1>
+        style="width: fit-content;">Travel Planner</h1>
     </a>
     
     <div id="loginDiv" class="container d-flex flex-column 
