@@ -12,21 +12,25 @@
         </button>
         <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="#">Calendar</a></li>
-        <li><a class="dropdown-item" href="tripEvents.php">Event List</a></li>
+        <li><a class="dropdown-item" href="eventsList.php">Event List</a></li>
         <li><a class="dropdown-item" href="#">Budget Tracker</a></li>
         <li><a class="dropdown-item" href="#">Notes</a></li>
         <li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item text-center" id="changeTrip" href="chooseTrip.php">Trips Manager</a></li>
         </ul> 
     </div>
-    <span class="navbar-brand mx-auto fs-2 text-maincolor fw-bold d-none d-sm-inline"> 
+    <span class="mx-auto fw-bold d-none d-sm-inline"> 
         <?php 
         if (isset($_SESSION["tripid"])) {
+            echo '<a class="navbar-brand fs-2 text-maincolor" href="tripPage.php">';
             output_tripname();
+            echo '</a>';
         } else {
+            echo '<a class="navbar-brand fs-2 text-maincolor" href="chooseTrip.php">';
             echo 'Welcome, ';
             output_username();
             echo '!';
+            echo '</a>';
         }
         ?>
     </span>

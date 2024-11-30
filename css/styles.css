@@ -9,10 +9,32 @@ body::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
 }
 
+* {
+    cursor: default;
+}
+
+button * {
+    cursor: pointer;
+}
+
 /* FOR: tripPage.php */
 /* centers trip info text */
 #trip-info {
     * {
         margin: auto;
     }
+}
+
+.event-li {
+    * {
+        cursor: default;
+    }
+    a {
+        cursor: pointer;
+    }
+}
+
+
+a * {
+    cursor: pointer;
 }
