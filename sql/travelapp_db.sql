@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 06, 2024 at 12:06 AM
+-- Generation Time: Nov 30, 2024 at 03:36 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -29,10 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `events` (
   `id` int(11) NOT NULL,
-  `event_name` varchar(255) NOT NULL,
+  `name` varchar(60) NOT NULL,
+  `location` varchar(60) NOT NULL,
+  `category` varchar(30) NOT NULL,
   `description` text DEFAULT NULL,
-  `est_cost` float(4,2) DEFAULT NULL,
-  `created_by` varchar(30) NOT NULL,
+  `people` varchar(255) NOT NULL,
+  `day_date` varchar(30) DEFAULT NULL,
+  `time_at` varchar(30) DEFAULT NULL,
+  `est_budget` decimal(7,2) DEFAULT NULL,
+  `links` text DEFAULT NULL,
+  `priority` varchar(30) DEFAULT NULL,
+  `created_by` varchar(30) DEFAULT NULL,
   `users_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -59,8 +66,7 @@ CREATE TABLE `trips` (
 
 INSERT INTO `trips` (`id`, `name`, `description`, `timeline`, `locations`, `people`, `est_budget`, `img`) VALUES
 (1, 'PNW Train Trip', 'We go on Amtrak train rides from the Bay Area through Oregon and Washington, all the way to Seattle. Then we either fly or take a train to Vancouver! Then we fly home from there!', 'Summer 2025', 'Oregon, Washington, Vancouver', 'Mattie, Angie', 0, 'https://hips.hearstapps.com/hmg-prod/images/mountain-reflection-in-bench-lake-mt-rainier-royalty-free-image-1587577282.jpg?crop=1xw:0.84415xh;center,top&resize=1200:*'),
-(7, 'SD Road Trip', 'Mom and I drive down to SD to visit Grandma and fam but stop for a night in the CA mountains!', 'Sept 2024', 'CA Mountains, San Diego', 'Mattie, Sandy', 0, 'https://www.trolleytours.com/wp-content/uploads/2018/10/old-town-trolley-tours-san-diego-beach-tour-view.jpg'),
-(13, 'This a Test Trip', 'We\'re going somewhere really really really really really cool!', '07/29/24 to 07/29/24', 'Somewhere', 'Mattie', 11, 'https://as1.ftcdn.net/v2/jpg/02/20/29/02/1000_F_220290248_3m89GmDUXPmpq6LrbkMwLLFArQ51Y1IR.jpg');
+(7, 'San Diego Road Trip', 'Mom and I drive down to SD to visit Grandma and fam but stop for a night in the CA mountains!', 'Sept 2024', 'CA Mountains, San Diego', 'Mattie, Sandy', 0, 'https://www.trolleytours.com/wp-content/uploads/2018/10/old-town-trolley-tours-san-diego-beach-tour-view.jpg');
 
 -- --------------------------------------------------------
 
@@ -82,18 +88,9 @@ CREATE TABLE `trip_users` (
 
 INSERT INTO `trip_users` (`id`, `user_name`, `user_id`, `trip_name`, `trip_id`) VALUES
 (1, 'Mattie', 4, 'PNW Train Trip', 1),
-(2, 'Mattie', 4, 'San Diego Road Trip', NULL),
 (3, 'Angie', 7, 'PNW Train Trip', 1),
-(4, 'Mattie', 4, 'SD Road Trip', 7),
-(5, 'Sandy', 8, 'SD Road Trip', 7),
-(6, 'Angie', 7, 'Stern Grove Concert', NULL),
-(7, 'Mattie', 4, 'Stern Grove Concert', NULL),
-(8, 'Mattie', 4, 'test trip', NULL),
-(9, 'Mattie', 4, 'test trip', NULL),
-(10, 'Mattie', 4, 'test trip 2', NULL),
-(11, 'Mattie', 4, 'Test Trip 3', NULL),
-(12, 'Mattie', 4, 'test trip 4 lol', 13),
-(13, 'Mattie', 4, 'another test', NULL);
+(4, 'Mattie', 4, 'San Diego Road Trip', 7),
+(5, 'Sandy', 8, 'San Diego Road Trip', 7);
 
 -- --------------------------------------------------------
 
@@ -124,6 +121,13 @@ INSERT INTO `users` (`id`, `username`, `pin`, `created_at`) VALUES
 --
 
 --
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `users_id` (`users_id`);
+
+--
 -- Indexes for table `trips`
 --
 ALTER TABLE `trips`
@@ -148,16 +152,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `trips`
 --
 ALTER TABLE `trips`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `trip_users`
 --
 ALTER TABLE `trip_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -168,6 +178,12 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `events`
+--
+ALTER TABLE `events`
+  ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE SET NULL;
 
 --
 -- Constraints for table `trip_users`
