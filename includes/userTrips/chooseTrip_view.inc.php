@@ -5,7 +5,7 @@ declare(strict_types=1);
 function output_trip_cards() {
     if(isset($_SESSION["user_trips"])) {
         foreach ($_SESSION["user_trips"] as $trip) {
-            echo '<div class="card mb-4 tripCard" style="width: 250px; height: fit-content;" id="tripCard-' . htmlspecialchars(strval($trip["id"])) . '">
+            echo '<div class="card mb-4 tripCard shadow" style="width: 250px; height: fit-content;" id="tripCard-' . htmlspecialchars(strval($trip["id"])) . '">
             <img src="' . htmlspecialchars($trip["img"]) . '" class="d-none d-sm-block card-img-top" alt="trip-image" style="max-height: 6.2em;">
             <div class="card-body">
                 <h5 class="card-title">' . htmlspecialchars($trip["name"]) . '</h5>

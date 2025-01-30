@@ -27,7 +27,7 @@
     <main class="d-flex flex-column container-fluid" style="">
         <div id="content" class="bg-secondary-subtle rounded mt-6 w-75 mx-auto mb-4
                                   d-flex flex-column gap-4 justify-content-start
-                                  gap-sm-6 pb-sm-4 border border-maincolor border-2" style="top: 20%;">
+                                  gap-sm-6 pb-sm-4" style="top: 20%;">
 
             <?php if(isset($_SESSION["user_id"])) {
               echo '
