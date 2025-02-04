@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $endDate = strtotime($_POST["endInput"]);
         $timeline = date('m/d/y', $startDate) . " to " . date('m/d/y', $endDate);
     }
+    
     try {
         require_once "../dbhandling.inc.php";
         require_once "addTrip_model.inc.php";

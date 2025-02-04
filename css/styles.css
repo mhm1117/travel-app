@@ -17,6 +17,14 @@ button * {
     cursor: pointer;
 }
 
+a {
+    cursor: pointer;
+}
+
+a * {
+    cursor: pointer;
+}
+
 /* FOR: tripPage.php */
 /* centers trip info text */
 #trip-info {
@@ -32,9 +40,4 @@ button * {
     a {
         cursor: pointer;
     }
-}
-
-
-a * {
-    cursor: pointer;
 }

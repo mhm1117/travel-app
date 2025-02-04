@@ -19,7 +19,7 @@
         <li><a class="dropdown-item text-center" id="changeTrip" href="chooseTrip.php">Trips Manager</a></li>
         </ul> 
     </div>
-    <span class="mx-auto fw-bold d-none d-sm-inline"> 
+    <span class="mx-auto fw-bold d-none d-sm-inline" id="navTitle"> 
         <?php 
         if (isset($_SESSION["tripid"])) {
             echo '<a class="navbar-brand fs-2 text-maincolor" href="tripPage.php">';
