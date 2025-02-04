@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $eventTime = $_POST["eventTime"];
     $cost = $_POST["eventCost"];
     $descript = $_POST["eventDescript"];
+    $userName = $_SESSION["user_username"];
 
     // date handling/cleaning
     if ($_POST["startInputEvent"] == $_POST["endInputEvent"]) {
@@ -30,14 +31,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         require_once "../dbhandling.inc.php";
+        require_once "../editTrips/addTrip_model.inc.php";
         require_once "addEvent_model.inc.php";
         require_once "addEvent_contr.inc.php";
 
         if ($action == 'add') {
-            
-
+            $query = "INSERT INTO events (name, location, description, day_date, time_at, est_cost, created_by) VALUES 
+                (:eventName, :location, :descript, :dates, :eventTime, :est_cost, :creator);";
+        } else {
+            die();
         }
 
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(":eventName", $eventName);
+        $stmt->bindParam(":descript", $descript);
+        $stmt->bindParam(":dates", $eventDates);
+        $stmt->bindParam(":location", $location);
+        $stmt->bindParam(":eventTime", $eventTime);
+        $stmt->bindParam(":est_cost", $cost);
+        $stmt->bindParam(":creator", $userName);
+        
+        $stmt->execute();
+
+        if (isset($_SESSION["tripid"])) {
+            bind_trip_event($pdo, $eventName, $_SESSION["tripname"]);
+        }
+
+        $pdo = null;
+        $stmt = null;
+
+        header("Location: ../../eventsList.php");
+
+        die();
     } catch (PDOException $e) {
         die("Query Failed: " . $e->getMessage());
     }
