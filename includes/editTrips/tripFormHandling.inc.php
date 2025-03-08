@@ -4,7 +4,7 @@ include "../config_session.inc.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $action = $_POST["fileSentFrom"];
     $tripName = $_POST["tripName"];
-    $ppl = $_POST["tripPpl"];
+    $ppl = $_POST["tripPpl"] . ", " . $_SESSION["user_username"];
     $locales = $_POST["tripLocales"];
     $typeTimeline = $_POST["timelineInput"];
     $budget = $_POST["tripBudget"];
