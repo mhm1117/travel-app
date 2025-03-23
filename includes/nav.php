@@ -21,17 +21,17 @@
     </div>
     <span class="mx-auto fw-bold d-none d-sm-inline" id="navTitle"> 
         <?php 
-        if (isset($_SESSION["tripid"])) {
-            echo '<a class="navbar-brand fs-2 text-maincolor" href="tripPage.php">';
-            output_tripname();
-            echo '</a>';
-        } else {
-            echo '<a class="navbar-brand fs-2 text-maincolor" href="chooseTrip.php">';
-            echo 'Welcome, ';
-            output_username();
-            echo '!';
-            echo '</a>';
-        }
+        // if (isset($_SESSION["tripid"])) {
+        //     echo '<a class="navbar-brand fs-2 text-maincolor" href="tripPage.php">';
+        //     output_tripname();
+        //     echo '</a>';
+        // } else {
+        //     echo '<a class="navbar-brand fs-2 text-maincolor" href="chooseTrip.php">';
+        //     echo 'Welcome, ';
+        //     output_username();
+        //     echo '!';
+        //     echo '</a>';
+        // }
         ?>
     </span>
     <div class="d-inline-flex column-gap-1">

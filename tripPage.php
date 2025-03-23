@@ -20,14 +20,41 @@ require_once "includes/config_session.inc.php";
     <title>PNW Train Trip</title>
   </head>
   <body> 
-    <?php display_trip_img() ?>
 
     <?php include "includes/nav.php" ?>
 
-    <main class="d-flex flex-column container-fluid">
-      
-      <div id="trip-info" class="d-flex flex-column container text-center gap-4" style="margin-top: 15vh;">
+    <main class="d-flex flex-column container-sm text-center p-0 rounded-4 mb-4" style="margin-top: 5vh; width: 80%;">
+      <?php display_trip_img() ?>
+      <div id="trip-info" class="d-flex flex-column mx-auto bg-white rounded-4 pt-4 gap-3 shadow-sm" style="max-width: 80%; margin-top: -6em;">
         <?php display_trip_info() ?>
+        <h1 class="text-dark fw-bold mx-4" style="">PNW Train Trip</h1>
+        <div class="fw-bold fs-3 text-dark px-5" style="" id="tripSummary">
+            <p>We go on an Amtrak train trip through the Pacifc Northwest
+              all the way to Vancouver!
+            </p>
+        </div>
+        <div class="grid fs-5 text-dark text-center pb-3" style="" id="tripDetails">
+            <div class="row py-3">
+                <div class="col px-5 mt-0">
+                    <span class="fw-bold fs-4">Timeline: </span>
+                    <span>June 2025</span>
+                </div>
+                <div class="col px-5 mt-0">
+                    <span class="fw-bold fs-4">Locations: </span>
+                    <span>Oregon, Seattle, Vancouver</span>
+                </div>
+            </div>
+            <div class="row py-3">
+                <div class="col px-5 mt-0">
+                    <span class="fw-bold fs-4">Est. Budget: </span>
+                    <span>$3000</span>
+                </div>
+                <div class="col px-5 mt-0">
+                    <span class="fw-bold fs-4">Who is Going: </span>
+                    <span>Angie, Mattie</span>
+                </div>
+            </div>
+        </div>
       </div>
     </main>
 
