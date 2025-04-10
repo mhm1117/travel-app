@@ -14,7 +14,7 @@ function display_trip_img() {
     echo '
         <div class="">
             <img class="rounded-top-4 object-fit-cover" 
-            style="max-width: 100%; height: 200px; min-width: 100%;" src="' . $trip["img"] . '">
+            style="max-width: 100%; max-height: 250px; min-width: 100%;" src="' . $trip["img"] . '">
         </div>';
     
 }

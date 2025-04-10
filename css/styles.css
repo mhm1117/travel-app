@@ -27,11 +27,6 @@ a * {
 
 /* FOR: tripPage.php */
 /* centers trip info text */
-#trip-info {
-    * {
-        margin: auto;
-    }
-}
 
 .event-li {
     * {

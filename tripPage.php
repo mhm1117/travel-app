@@ -25,15 +25,23 @@ require_once "includes/config_session.inc.php";
 
     <main class="d-flex flex-column container-sm text-center p-0 rounded-4 mb-4" style="margin-top: 5vh; width: 80%;">
       <?php display_trip_img() ?>
-      <div id="trip-info" class="d-flex flex-column mx-auto bg-white rounded-4 pt-4 gap-3 shadow-sm" style="max-width: 80%; margin-top: -6em;">
+      <div id="trip-info" class="d-flex flex-column mx-auto rounded-4 bg-white pt-4 gap-3 shadow-sm text-start" style="max-width: 75%; margin-top: -7em;">
         <?php display_trip_info() ?>
-        <h1 class="text-dark fw-bold mx-4" style="">PNW Train Trip</h1>
+        <div id="trip-title" class="d-flex px-5">
+          <h1 class="text-dark fw-bold mx-0" style="">PNW Train Trip</h1>
+          <a id="" class="text-dark editTripBtn btn btn-link" href="chooseTrip.php">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentcolor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                              </svg>
+          </a>
+        </div>
         <div class="fw-bold fs-3 text-dark px-5" style="" id="tripSummary">
             <p>We go on an Amtrak train trip through the Pacifc Northwest
               all the way to Vancouver!
             </p>
         </div>
-        <div class="grid fs-5 text-dark text-center pb-3" style="" id="tripDetails">
+        <div class="grid fs-5 text-dark text-center pb-3 m-auto" style="" id="tripDetails">
             <div class="row py-3">
                 <div class="col px-5 mt-0">
                     <span class="fw-bold fs-4">Timeline: </span>
