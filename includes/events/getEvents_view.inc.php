@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="col text-end d-flex flex-column justify-content-between gap-3">
-            <div class=""><span class="bg-danger-subtle rounded px-2">Food</span></div>
+            <div class=""><span class="bg-warning-subtle rounded px-2">Food</span></div>
             <img src="../../assets/beer-tasting.jpg" class="img-fluid rounded align-self-end" style="max-height: 150px;">
         </div>
         <!-- <div class="col"><span class="bg-danger-subtle rounded py-1 px-2">Activity</span></div> -->
