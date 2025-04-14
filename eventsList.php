@@ -20,17 +20,19 @@
     <title>Travel App Page</title>
 </head>
 <body>
-    <?php include "includes/nav.php";?>
+    <?php include "includes/nav.php"; ?>
+
+    <?php include "includes/currentTripNav.inc.php"; ?>
 
     <?php include "includes/editEvents/addEvent.php"; ?>
 
-    <main class="container-fluid" style="">
-        <div id="content" class="d-grid text-center text-dark bg-secondary-subtle mt-6 w-75 mx-auto mb-4 p-4 
-                                rounded row-gap-3 fs-5 pt-3">
+    <main class="d-flex flex-column container-fluid" style="">
+        <div id="content" class="text-center text-dark bg-secondary-subtle mt-6 mb-4 w-75 mx-auto p-4
+                                rounded fs-5" style="max-width: 1000px;">
             
             <?php if(isset($_SESSION["user_id"])) {
               echo '
-                <h1 class="text-maincolor fw-bold text-start mb-3">
+                <h1 class="text-maincolor fw-bold text-start mb-4">
                 <span>EVENTS</span>
                 <a class="link link-maincolor link-underline-opacity-0" data-bs-toggle="modal" data-bs-target="#addEventModal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 20 20">
@@ -39,34 +41,8 @@
                 </a>
                 </h1>'; } ?>
 
-            <div id="event-list-header" class="event-li row border-bottom border-dark border-3 mb-2">
-                <div class="col fw-bold">NAME</div>
-                <div class="col fw-bold">DATE</div>
-                <div class="col fw-bold">LOCATION</div>
-                <div class="col fw-bold">TIME</div>
-                <div class="col fw-bold">CATEGORY</div>
-            </div>
-            <div class="event-li row rounded py-2 align-items-center bg-light shadow-sm">
-                <div class="col fw-bold border-end border-dark-subtle border-2"><a class="link link-maincolor link-underline-opacity-0">Pickleball</a></div>
-                <div class="col border-end border-dark-subtle border-2">MON 9/2/24</div>
-                <div class="col border-end border-dark-subtle border-2">Presido Wall</div>
-                <div class="col border-end border-dark-subtle border-2">1:00 PM</div>
-                <div class="col"><span class="bg-danger-subtle rounded py-1 px-2">Activity</span></div>
-            </div>
-            <div class="event-li row rounded py-2 align-items-center bg-light shadow-sm">
-                <div class="col fw-bold border-end border-dark-subtle border-2"><a class="link link-maincolor link-underline-opacity-0">Burma Superstar</a></div>
-                <div class="col border-end border-dark-subtle border-2">SUN 9/1/24</div>
-                <div class="col fw-bold border-end border-dark-subtle border-2"><a class="link link-dark link-underline-opacity-0" href="https://maps.app.goo.gl/BWhgwPD6hhn4EhBY7">Inner Richmond</a></div>
-                <div class="col border-end border-dark-subtle border-2">6:00 PM</div>
-                <div class="col"><span class="bg-warning-subtle rounded py-1 px-2">Food</span></div>
-            </div>
-            <div class="event-li row rounded py-2 align-items-center bg-light shadow-sm">
-                <div class="col fw-bold border-end border-dark-subtle border-2"><a class="link link-maincolor link-underline-opacity-0">Trip Planning</a></div>
-                <div class="col border-end border-dark-subtle border-2">MON 9/2/24</div>
-                <div class="col border-end border-dark-subtle border-2">Mom's House</div>
-                <div class="col border-end border-dark-subtle border-2">3:00 PM</div>
-                <div class="col"><span class="bg-danger-subtle rounded py-1 px-2">Activity</span></div>
-            </div>
+            <?php include "includes/events/getEvents_view.inc.php" ?>
+
         </div>
         <!-- <div id="content" class="d-grid bg-secondary-subtle rounded mt-6 w-75 mx-auto mb-4 p-3
                                  row-gap-2 border border-maincolor border-2">

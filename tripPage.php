@@ -22,6 +22,7 @@ require_once "includes/config_session.inc.php";
   <body> 
 
     <?php include "includes/nav.php" ?>
+    <?php include "includes/currentTripNav.inc.php" ?>
 
     <main class="d-flex flex-column container-sm text-center p-0 rounded-4 mb-4" style="margin-top: 5vh; width: 80%;">
       <?php display_trip_img() ?>

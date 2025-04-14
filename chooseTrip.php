@@ -22,10 +22,13 @@
     <title>Travel App Page</title>
 </head>
 <body class="">
-    <?php include "includes/nav.php" ?>
+    <?php include "includes/nav.php"; ?>
+
+    <?php include "includes/currentTripNav.inc.php"; ?>
 
     <main class="d-flex flex-column container-fluid" style="">
-        <div id="content" class="bg-secondary-subtle rounded mt-6 w-75 mx-auto mb-4
+
+        <div id="content" class="bg-secondary-subtle rounded mt-5 w-75 mx-auto mb-4
                                   d-flex flex-column gap-4 justify-content-start
                                   gap-sm-6 pb-sm-4" style="top: 20%;">
 

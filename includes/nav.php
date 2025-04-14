@@ -19,31 +19,17 @@
         <li><a class="dropdown-item text-center" id="changeTrip" href="chooseTrip.php">Trips Manager</a></li>
         </ul> 
     </div>
-    <span class="mx-auto fw-bold d-none d-sm-inline" id="navTitle"> 
-        <?php 
-        // if (isset($_SESSION["tripid"])) {
-        //     echo '<a class="navbar-brand fs-2 text-maincolor" href="tripPage.php">';
-        //     output_tripname();
-        //     echo '</a>';
-        // } else {
-        //     echo '<a class="navbar-brand fs-2 text-maincolor" href="chooseTrip.php">';
-        //     echo 'Welcome, ';
-        //     output_username();
-        //     echo '!';
-        //     echo '</a>';
-        // }
-        ?>
-    </span>
-    <div class="d-inline-flex column-gap-1">
+
+    <div class="d-inline-flex column-gap-1" style="height: 46px;">
         <?php login_btn(); ?>
-        <button class="btn btn-maincolor text-light" id="searchBtn">
+        <!-- <button class="btn btn-maincolor text-light" id="searchBtn">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
             </svg>
             </a>
-            <!-- <div class="collapse collapse-horizontal" id="collapseSearch">
-            <form><input type="search" class="form-control form-control-sm" placeholder="Search..."></form> -->
+            <div class="collapse collapse-horizontal" id="collapseSearch">
+                <form><input type="search" class="form-control form-control-sm" placeholder="Search..."></form>
             </div>
-        </button>
+        </button> -->
     </div>
 </nav>
