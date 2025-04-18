@@ -36,3 +36,17 @@ a * {
         cursor: pointer;
     }
 }
+
+@media only screen and (max-width: 900px){
+    
+    .event-col-2 {
+        display: none;
+        * {
+            display: none;
+        }
+    }
+    .event-col-1 {
+        
+    }
+    
+}
